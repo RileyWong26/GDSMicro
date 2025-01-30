@@ -11,5 +11,16 @@ config_version=5
 [application]
 
 config/name="GDSMicroJam"
+run/main_scene="res://field.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
+
+[display]
+
+window/size/viewport_width=768
+window/size/viewport_height=432
+window/stretch/mode="canvas_items"
+
+[rendering]
+
+textures/canvas_textures/default_texture_filter=0

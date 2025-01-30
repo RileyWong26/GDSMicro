@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://dx8mucad4x6cv"]
+
+[ext_resource type="Script" path="res://projectile.gd" id="1_jky3d"]
+[ext_resource type="Texture2D" uid="uid://dlisgjbjxv2ly" path="res://Assets/Projectile.png" id="2_f7cwv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ekj8l"]
+size = Vector2(4, 4)
+
+[node name="Projectile" type="CharacterBody2D"]
+script = ExtResource("1_jky3d")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_f7cwv")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_ekj8l")
+
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
