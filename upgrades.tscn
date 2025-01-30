@@ -1,0 +1,71 @@
+[gd_scene load_steps=3 format=3 uid="uid://7v2ufchuss4o"]
+
+[ext_resource type="Script" path="res://upgrades.gd" id="1_k54sl"]
+[ext_resource type="Texture2D" uid="uid://egfnpfs6n88h" path="res://Assets/Up.png" id="1_wm4js"]
+
+[node name="Upgrades" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -672.0
+offset_bottom = -388.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_k54sl")
+
+[node name="Grid" type="GridContainer" parent="."]
+layout_mode = 0
+offset_right = 571.0
+offset_bottom = 418.0
+columns = 3
+
+[node name="HFlowContainer3" type="VFlowContainer" parent="Grid"]
+layout_mode = 2
+alignment = 1
+last_wrap_alignment = 2
+
+[node name="Speed" type="Label" parent="Grid/HFlowContainer3"]
+z_index = 1
+layout_mode = 2
+text = "Movement"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="Grid/HFlowContainer3"]
+layout_mode = 2
+icon = ExtResource("1_wm4js")
+flat = true
+
+[node name="HFlowContainer" type="VFlowContainer" parent="Grid"]
+layout_mode = 2
+alignment = 1
+
+[node name="Speed" type="Label" parent="Grid/HFlowContainer"]
+z_index = 1
+layout_mode = 2
+text = "Fire Rate"
+horizontal_alignment = 1
+
+[node name="Firerate" type="Button" parent="Grid/HFlowContainer"]
+layout_mode = 2
+icon = ExtResource("1_wm4js")
+flat = true
+
+[node name="HFlowContainer2" type="VFlowContainer" parent="Grid"]
+layout_mode = 2
+alignment = 1
+
+[node name="Speed" type="Label" parent="Grid/HFlowContainer2"]
+z_index = 1
+layout_mode = 2
+text = "Damage"
+
+[node name="Damage" type="Button" parent="Grid/HFlowContainer2"]
+layout_mode = 2
+icon = ExtResource("1_wm4js")
+flat = true
+
+[connection signal="pressed" from="Grid/HFlowContainer3/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Grid/HFlowContainer/Firerate" to="." method="_on_firerate_pressed"]
+[connection signal="pressed" from="Grid/HFlowContainer2/Damage" to="." method="_on_damage_pressed"]
