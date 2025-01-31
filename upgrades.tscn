@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://egfnpfs6n88h" path="res://Assets/Up.png" id="1_wm4js"]
 
 [node name="Upgrades" type="Control"]
+process_mode = 3
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -66,6 +67,21 @@ layout_mode = 2
 icon = ExtResource("1_wm4js")
 flat = true
 
+[node name="HFlowContainer4" type="VFlowContainer" parent="Grid"]
+layout_mode = 2
+alignment = 1
+
+[node name="Speed" type="Label" parent="Grid/HFlowContainer4"]
+z_index = 1
+layout_mode = 2
+text = "Bullet size "
+
+[node name="Damage" type="Button" parent="Grid/HFlowContainer4"]
+layout_mode = 2
+icon = ExtResource("1_wm4js")
+flat = true
+
 [connection signal="pressed" from="Grid/HFlowContainer3/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Grid/HFlowContainer/Firerate" to="." method="_on_firerate_pressed"]
 [connection signal="pressed" from="Grid/HFlowContainer2/Damage" to="." method="_on_damage_pressed"]
+[connection signal="pressed" from="Grid/HFlowContainer4/Damage" to="." method="_on_size_pressed"]

@@ -1,8 +1,10 @@
-class_name Chicken extends CharacterBody2D
+extends Chicken
 
-@onready var PlayerUpgrades = get_parent().get_node("Player/Upgrades")
-var health := Global.chickenHealth
-var scaled := 1.0 / health
+func _ready() -> void:
+	health = Global.bigChickenHealth
+	scaled = 10.0 / health
+	$Sprite2D.scale = Vector2(health, health) * scaled
+	$Area2D/CollisionShape2D.scale = Vector2(health, health) * scaled
 
 func _physics_process(delta: float) -> void:
 	var target = get_parent().get_node("Player").global_position
@@ -12,6 +14,7 @@ func _physics_process(delta: float) -> void:
 	$Sprite2D.rotation_degrees = angle
 	$Area2D/CollisionShape2D.rotation_degrees = angle
 	move_and_slide()
+
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body is Projectile:
@@ -28,7 +31,7 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 				get_tree().paused = true
 				PlayerUpgrades.show()
 				
-			Global.score += 10
+			Global.score += 50
 			queue_free()
 		body.queue_free()
 	if body is Player:

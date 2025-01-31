@@ -24,7 +24,7 @@ projectileScene = ExtResource("2_k8n1b")
 texture = ExtResource("2_yc3ni")
 
 [node name="SpawnNode" type="Node2D" parent="Sprite2D"]
-position = Vector2(0, -6)
+position = Vector2(0, -10)
 
 [node name="Timer" type="Timer" parent="."]
 autostart = true
@@ -44,7 +44,6 @@ offset_bottom = -82.0
 text = "Score: "
 
 [node name="Upgrades" parent="." instance=ExtResource("4_vf6g3")]
-process_mode = 3
 anchors_preset = 9
 anchor_right = 0.0
 offset_left = -178.0
@@ -55,11 +54,11 @@ grow_horizontal = 1
 
 [node name="Level" type="Label" parent="."]
 z_index = 1
-offset_left = 52.0
-offset_top = -109.0
-offset_right = 101.0
-offset_bottom = -86.0
-text = "Level: "
+offset_left = 40.0
+offset_top = -108.0
+offset_right = 89.0
+offset_bottom = -85.0
+text = "Level 1: "
 
 [node name="LevelProgress" type="TextureProgressBar" parent="."]
 z_index = 1
