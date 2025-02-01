@@ -21,7 +21,7 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 		$Sprite2D.scale = Vector2(health, health) * scaled
 		$Area2D/CollisionShape2D.scale = Vector2(health, health) * scaled
 		if $Sprite2D.scale.x <= 0.01:
-			Global.progress += 1
+			Global.progress += 3
 			get_parent().get_node("Player/LevelProgress").value = float(Global.progress/Global.toLevelUp) * 100
 			
 			if get_parent().get_node("Player/LevelProgress").value == 100:
@@ -30,7 +30,7 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 				get_tree().paused = true
 				PlayerUpgrades.show()
 				
-			Global.score += 10
+			Global.score += 20
 			queue_free()
 		body.queue_free()
 	if body is Player:

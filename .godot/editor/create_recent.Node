@@ -1,3 +1,5 @@
+Sprite2D
+TextureRect
 Timer
 Chicken
 VFlowContainer
@@ -8,8 +10,5 @@ GridContainer
 TextureProgressBar
 Label
 TextEdit
-TextureRect
 HFlowContainer
 Button
-Area2D
-Node2D

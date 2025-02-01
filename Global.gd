@@ -12,7 +12,7 @@ var bigChicken := false
 var speedChicken := 100.0
 var speedChickenChance := 0
 var chickenHealth := 1.0
-var speedChickenHealth := 0.2
+var speedChickenHealth := 0.2 # Change
 var bigChickenHealth := 50
 
 var toLevelUp := 3.0
@@ -31,7 +31,12 @@ func reset():
 
 	chickenspeed = 50.0
 	chickenSpawn = 5.0
+	speedChickenChance = 0
+	speedChicken = 100.0
 	bigChicken = false
+	chickenHealth = 1.0
+	speedChickenHealth = 0.2
+	bigChickenHealth = 50.0
 
 	toLevelUp = 3.0
 	level = 1
