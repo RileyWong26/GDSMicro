@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://cxe7i3skqp557"]
+[gd_scene load_steps=9 format=3 uid="uid://cxe7i3skqp557"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_sk83r"]
 [ext_resource type="PackedScene" uid="uid://dx8mucad4x6cv" path="res://projectile.tscn" id="2_k8n1b"]
 [ext_resource type="Texture2D" uid="uid://bbv4trq6ck6y1" path="res://Assets/Player.png" id="2_yc3ni"]
+[ext_resource type="Texture2D" uid="uid://da2i4itqspa1e" path="res://Assets/Pointer2.png" id="4_pjjbr"]
 [ext_resource type="PackedScene" uid="uid://7v2ufchuss4o" path="res://upgrades.tscn" id="4_vf6g3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x7u32"]
@@ -25,6 +26,9 @@ texture = ExtResource("2_yc3ni")
 
 [node name="SpawnNode" type="Node2D" parent="Sprite2D"]
 position = Vector2(0, -10)
+
+[node name="Sprite2D" type="Sprite2D" parent="Sprite2D/SpawnNode"]
+texture = ExtResource("4_pjjbr")
 
 [node name="Timer" type="Timer" parent="."]
 autostart = true
